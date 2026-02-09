@@ -10,9 +10,12 @@ I went with three separate queries in the status counts command because it's cle
 The endpoints use Laravel's route model binding and return standard HTTP codes (200 for success, 404 for not found, 422 for validation errors). Pretty straightforward REST API design.
 
 ## What I'd Add Next
-- Caching for the status counts
-- Indexes on `status` and `checked_in_at` columns
-- User tracking (who checked in/out what)
-- Soft deletes to keep checkout history
-- Rate limiting
-- Better error logging
+With more time, I would add:
+- Caching for the status counts to reduce database hits
+- Database indexes on `status` and `checked_in_at` columns for query performance
+- User authentication to track who performed check-ins
+- Soft deletes for maintaining checkout history
+- API rate limiting to prevent abuse
+- Email notifications when tools are overdue
+- A web UI for non-technical users
+

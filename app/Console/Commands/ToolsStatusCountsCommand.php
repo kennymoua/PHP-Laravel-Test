@@ -9,6 +9,7 @@ class ToolsStatusCountsCommand extends Command
 {
     // This is the CLI command signature that will be used to run this command from the terminal
     protected $signature = 'tools:status-counts';
+    
     // This is the description of the command that will be shown when listing available commands
     protected $description = 'Display counts of tools by their status';
 

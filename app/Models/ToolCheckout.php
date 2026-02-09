@@ -25,11 +25,14 @@ class ToolCheckout extends Model
     /**
      * TODO: Implement this scope.
      * A checkout is currently checked out when checked_in_at IS NULL.
+     * 
+     * This scope acts as a method to be resued anywhere in the codebase - ken  
+     * Example usage: ToolCheckout::currentlyCheckedOut()->get(); 
      */
     public function scopeCurrentlyCheckedOut($query)
     {
         // Intentionally wrong to make tests fail until implemented.
-        // check the WhereNull condition for checked_in_at to find active checkouts - ken
+        // Fix: Changed WhereNotNull to WhereNull to return checkouts that are still active (not yet checked in) - ken
         return $query->whereNull('checked_in_at');
     }
 
